@@ -16,6 +16,7 @@ on windows
 `set https_proxy=https://HR:Excelsior@proxyserver:proxyport
 `
 
+
 ## install Numpy, Pandas, Scipy, Matplotlib
 Es utilizado para Machine Learning.
 
