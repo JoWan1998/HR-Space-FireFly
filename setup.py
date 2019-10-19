@@ -6,7 +6,7 @@ setup(
     packages=[''],
     url='',
     license='',
-    author='Jose_Wannan;TEAM HR_EXCELSIOR',
-    author_email='2993999310101@ingenieria.usac.edu.gt',
+    author='TEAM HR_EXCELSIOR',
+    author_email='',
     description=''
 )
