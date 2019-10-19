@@ -8,5 +8,5 @@ setup(
     license='',
     author='TEAM HR_EXCELSIOR',
     author_email='',
-    description=''
+    description='', requires=['pandas']
 )
