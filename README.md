@@ -30,3 +30,5 @@ Es utilizado para Machine Learning.
 
 ## install csv import webDjango
 `pip install csvImporter`
+
+para importar datos csv
