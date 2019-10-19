@@ -9,7 +9,7 @@ TEAM HR EXCELSIOR 1906
 `run command` **`pip install django`**
 
 ## install Numpy, Pandas, Scipy, Matplotlib
-Es utilizado para Machine Learning
+Es utilizado para Machine Learning.
 
 `   pip install numpy `
 
