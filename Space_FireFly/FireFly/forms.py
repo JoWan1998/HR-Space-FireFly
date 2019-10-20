@@ -1,16 +1,4 @@
-from django.forms import ModelForm, ClearableFileInput
+from django.forms import ModelForm, ClearableFileInput, forms
 
-from .models import data
-
-
-class CustomClearableFileInput(ClearableFileInput):
-    template_with_clear = '<br>  <label for="%(clear_checkbox_id)s">%(clear_checkbox_label)s</label> %(clear)s'
-
-
-class FormEntrada(ModelForm):
-    class Meta:
-        model = data
-        fields = ('nombre', 'file')
-        widgets = {
-            'file': CustomClearableFileInput
-        }
+class dataForm(forms.Form):
+     file = forms.FileField(label='Selecciona el archivo a subir .csv')

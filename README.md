@@ -28,7 +28,3 @@ Es utilizado para Machine Learning.
 
  `   pip install matplotlib`
 
-## install csv import webDjango
-`pip install csvImporter`
-
-para importar datos csv
