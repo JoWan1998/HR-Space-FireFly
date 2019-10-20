@@ -9,8 +9,9 @@ from .models import data
 
 
 
+
 def index(request):
-    return HttpResponse("NASA, primer vistazo a SPACE FIREFLY")
+    return render(request,'SpaceFireFly/FireFly/index.html',context={})
 
 
 def entrada(request):
