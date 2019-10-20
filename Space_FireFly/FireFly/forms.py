@@ -1,6 +1,6 @@
 from django.forms import ModelForm, ClearableFileInput
 
-from Space_FireFly.FireFly.models import data
+from .models import data
 
 
 class CustomClearableFileInput(ClearableFileInput):

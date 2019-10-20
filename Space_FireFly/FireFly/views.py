@@ -4,13 +4,13 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 
 # Create your views here.
-from Space_FireFly.FireFly.forms import FormEntrada
-from Space_FireFly.FireFly.models import data
+from .forms import FormEntrada
+from .models import data
 
 
 
 def index(request):
-    return HttpResponse("NASA, primer vistazo a SPACE FIREFLY");
+    return HttpResponse("NASA, primer vistazo a SPACE FIREFLY")
 
 
 def entrada(request):
