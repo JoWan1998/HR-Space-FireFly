@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from Space_FireFly.FireFly import views
 
 urlpatterns = [
     path('', views.index, name='Inicio'),
