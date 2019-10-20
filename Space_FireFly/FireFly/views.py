@@ -11,7 +11,7 @@ from .models import data
 
 
 def index(request):
-    return render(request,'SpaceFireFly/FireFly/index.html',context={})
+    return render(request,'index.html',context={})
 
 
 def entrada(request):
