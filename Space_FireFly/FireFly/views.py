@@ -20,12 +20,12 @@ def index(request):
             insert = data(nombre=titulo, file=archivo)
             insert.save()
 
-            return render(request,'index.html',context={'mensaje':'EXITO'})
+            return render(request,'index.html',context={'mensaje':'EXITO','form':form})
         else:
             messages.error(request, "Error al procesar el formulario")
     else:
         form = FormEntrada()
-        return render(request,'index.html',context={'mensaje':'Ingresa el archivo!!'})
+        return render(request,'index.html',context={'mensaje':'Ingresa el archivo!!','form':form})
 
 def equipo(request):
     return render(request,'contact.html',context={})
