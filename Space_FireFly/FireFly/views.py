@@ -29,7 +29,7 @@ def index(request):
             messages.error(request, "Error al procesar el formulario")
     else:
         form = dataForm()
-        return render_to_response('index.html',{'mensaje':'Ingresa el archivo!!','form':form},RequestContext(request))
+        return render_to_response('index.html',{'mensaje':'','form':form},RequestContext(request))
 
 def equipo(request):
     return render(request,'contact.html',context={})

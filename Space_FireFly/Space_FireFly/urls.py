@@ -22,5 +22,5 @@ from django.urls import include, path
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('SpaceFireFly/', include('FireFly.urls')),
+    path('', include('FireFly.urls')),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
