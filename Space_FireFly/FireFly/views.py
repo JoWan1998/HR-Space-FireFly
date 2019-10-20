@@ -1,48 +1,36 @@
+from xml.dom.minidom import Document
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-
+from django.shortcuts import render_to_response
 # Create your views here.
-from .forms import FormEntrada
+from django.template import RequestContext
+from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+
+from .forms import dataForm
 from .models import data
 
-
-
-
+@csrf_exempt
 def index(request):
     if request.method == 'POST':
-        form = FormEntrada(request.POST, request.FILES)
+        form = dataForm(request.POST, request.FILES)
         if form.is_valid():
-            titulo = request.POST['titulo']
-            archivo = request.FILES['archivo']
+            newdoc = data(file = request.FILES['file'])
+            if newdoc != None:
+                print(newdoc.file.name)
+                newdoc.save()
+                messages.info(request,"exito")
 
-            insert = data(nombre=titulo, file=archivo)
-            insert.save()
-
-            return render(request,'index.html',context={'mensaje':'EXITO','form':form})
+            return HttpResponseRedirect(reverse(index))
         else:
             messages.error(request, "Error al procesar el formulario")
     else:
-        form = FormEntrada()
-        return render(request,'index.html',context={'mensaje':'Ingresa el archivo!!','form':form})
+        form = dataForm()
+        return render_to_response('index.html',{'mensaje':'Ingresa el archivo!!','form':form},RequestContext(request))
 
 def equipo(request):
     return render(request,'contact.html',context={})
 
-
-def entrada(request):
-    if request.method == 'POST':
-        form = FormEntrada(request.POST, request.FILES)
-        if form.is_valid():
-            titulo = request.POST['titulo']
-            archivo = request.FILES['archivo']
-
-            insert = data(nombre=titulo, file=archivo)
-            insert.save()
-
-            return HttpResponseRedirect('success')
-        else:
-            messages.error(request, "Error al procesar el formulario")
-    else:
-        return HttpResponseRedirect('error')

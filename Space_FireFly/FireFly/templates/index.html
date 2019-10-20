@@ -64,9 +64,19 @@
 							<br>
 							<p>{{ mensaje }}</p>
 							<br />
-							<form action="" method="post">
-    							{% csrf_token %}
-    							{{ form }}
+							<form action="{% url 'Inicio' %}" method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+    							<p>{{ form.non_field_errors }}</p>
+								<br>
+								<p>	{{ form.file.help_text }}</p>
+								<br>
+								<p> {{ form.file.errors }} </p>
+								<br>
+								<p>
+									<!--<strong><p>{{ form.file.label_tag }} </p></strong>-->
+									{{ form.file }}
+								</p>
+
     							<input type="submit" value="Submit">
 							</form>
 							<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />

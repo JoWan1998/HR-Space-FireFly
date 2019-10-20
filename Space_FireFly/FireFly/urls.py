@@ -9,4 +9,4 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name='Inicio'),
     url(r'^Equipo/$',views.equipo, name='Equipo'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
